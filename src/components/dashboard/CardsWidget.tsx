@@ -26,7 +26,7 @@ export function CardsWidget() {
                 </div>
             </div>
 
-            <div className="space-y-6 flex-1">
+            <div className="flex flex-col flex-1 justify-between gap-4">
                 {CARDS_DATA.map((card) => (
                     <div
                         key={card.id}
