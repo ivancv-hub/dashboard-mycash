@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Home, CreditCard, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { Tooltip } from '../ui/Tooltip';
+import { useSidebar } from '../../contexts/SidebarContext';
 
 // Nav items baseados no design do Figma (Node 2006:929)
 const NAV_ITEMS = [
@@ -11,7 +11,7 @@ const NAV_ITEMS = [
 ];
 
 export function Sidebar() {
-    const [isCollapsed, setIsCollapsed] = useState(false);
+    const { isCollapsed, toggleSidebar } = useSidebar();
     const location = useLocation();
 
     return (
@@ -37,7 +37,7 @@ export function Sidebar() {
 
             {/* TOGGLE BUTTON - Figma: Component "icon-sidebar" */}
             <button
-                onClick={() => setIsCollapsed(!isCollapsed)}
+                onClick={toggleSidebar}
                 className="absolute -right-3 top-8 w-6 h-6 bg-white border border-neutral-300 rounded-full flex items-center justify-center shadow-md hover:bg-neutral-50 transition-all z-50"
             >
                 {isCollapsed ? (
