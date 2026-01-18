@@ -28,13 +28,11 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-4">
                 {/* Left Column */}
                 <div className="space-y-4">
-                    {/* Category Cards Carousel */}
-                    <div className="overflow-x-auto pb-2">
-                        <div className="flex gap-3 min-w-max">
-                            {CATEGORIES.map((category) => (
-                                <CategoryCard key={category.label} {...category} />
-                            ))}
-                        </div>
+                    {/* Category Cards Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+                        {CATEGORIES.map((category) => (
+                            <CategoryCard key={category.label} {...category} />
+                        ))}
                     </div>
 
                     {/* Summary Cards */}
