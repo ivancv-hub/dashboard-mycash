@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LayoutShell } from './components/layout/LayoutShell';
+import Dashboard from './pages/Dashboard';
 
-// Placeholders para as Views (serão implementadas nos próximos prompts)
-const Dashboard = () => <div className="p-8"><h1 className="text-display-sm text-neutral-1000">Dashboard</h1></div>;
+// Placeholders para as Views
 const Transactions = () => <div className="p-8"><h1>Transações</h1></div>;
 const Cards = () => <div className="p-8"><h1>Cartões</h1></div>;
 const Goals = () => <div className="p-8"><h1>Objetivos</h1></div>;
