@@ -4,7 +4,7 @@
 
 - [x] PROMPT 0: Análise e Planejamento
 - [x] PROMPT 1: Estrutura Base
-- [ ] PROMPT 2: Layout Desktop
+- [x] PROMPT 2: Layout Desktop
 - [ ] PROMPT 3: Layout Mobile
 - [ ] PROMPT 4: Context Global
 - [ ] PROMPT 5: Cards Resumo
@@ -58,5 +58,28 @@
 - Tentativa 1: Falha (módulos corrompidos).
 - Correção: Reinstalação limpa de `node_modules` e `typescript`.
 - Tentativa 2: Sucesso.
+
+---
+
+## PROMPT 2: Layout Desktop
+**Status**: ✅ Concluído | **Data**: 18/01/2026 | **Build**: ✅ Sucesso
+
+### Implementado
+- **Sidebar**: Componente responsivo com estados expandido/colapsado.
+- **Navegação**: Links ativos com destaque visual (tokens Semantic/Brand).
+- **LayoutShell**: Gerenciamento de margens e transições para o conteúdo principal.
+- **Tooltip**: Componente reutilizável para melhor UX no modo colapsado.
+- **Hook de Navegação**: Lógica centralizada em `useNavigation`.
+
+### Arquivos Modificados/Criados
+- `src/components/layout/Sidebar.tsx`
+- `src/components/layout/LayoutShell.tsx`
+- `src/components/ui/Tooltip.tsx`
+- `src/hooks/useNavigation.ts`
+- `src/App.tsx`
+
+### Observações
+- O layout desktop assume `pl-64` (256px) por padrão, ajustando para `pl-20` (80px) quando colapsado.
+- Utilizado `lucide-react` para ícones consistentes.
 
 ---
