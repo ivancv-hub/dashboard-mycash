@@ -45,8 +45,8 @@ export default function Dashboard() {
                     </div>
                 </div>
 
-                {/* Right Column - Cards Widget */}
-                <div className="lg:block">
+                {/* Right Column - Cards Widget (full height) */}
+                <div className="lg:flex lg:flex-col">
                     <CardsWidget />
                 </div>
             </div>

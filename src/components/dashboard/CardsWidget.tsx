@@ -9,7 +9,7 @@ const CARDS_DATA = [
 
 export function CardsWidget() {
     return (
-        <Card className="p-5">
+        <Card className="p-5 flex flex-col h-full">
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                     <CreditCard className="w-4 h-4 text-neutral-900" />
@@ -25,7 +25,7 @@ export function CardsWidget() {
                 </div>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-3 flex-1">
                 {CARDS_DATA.map((card) => (
                     <div
                         key={card.id}
