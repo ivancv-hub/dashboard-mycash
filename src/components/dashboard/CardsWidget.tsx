@@ -1,27 +1,25 @@
 import { Card } from '../ui/Card';
-import { Plus, ChevronRight } from 'lucide-react';
+import { Plus, ChevronRight, CreditCard } from 'lucide-react';
 
 const CARDS_DATA = [
-    { id: '1', name: 'Nubank', amount: 5000, cardNumber: '****8021', color: 'bg-purple-600' },
-    { id: '2', name: 'Inter', amount: 5000, cardNumber: '****8021', color: 'bg-orange-500' },
-    { id: '3', name: 'Picpay', amount: 5000, cardNumber: '****8021', color: 'bg-green-500' },
+    { id: '1', name: 'Nubank', amount: 120, cardNumber: '****5897', color: 'bg-purple-600' },
+    { id: '2', name: 'Inter', amount: 2300, cardNumber: '****5897', color: 'bg-orange-500' },
+    { id: '3', name: 'Picpay', amount: 17000, cardNumber: '****5897', color: 'bg-green-500' },
 ];
 
 export function CardsWidget() {
     return (
-        <Card>
+        <Card className="p-5">
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 bg-neutral-900 rounded flex items-center justify-center">
-                        <div className="w-3 h-2 border border-white rounded-sm" />
-                    </div>
-                    <h3 className="text-base font-bold text-neutral-1000">Cards & contas</h3>
+                    <CreditCard className="w-4 h-4 text-neutral-900" />
+                    <h3 className="text-sm font-bold text-neutral-1000">Cards & contas</h3>
                 </div>
                 <div className="flex items-center gap-1">
-                    <button className="w-8 h-8 rounded-full hover:bg-neutral-100 flex items-center justify-center transition-colors">
+                    <button className="w-7 h-7 rounded-lg hover:bg-neutral-100 flex items-center justify-center transition-colors">
                         <Plus className="w-4 h-4 text-neutral-900" />
                     </button>
-                    <button className="w-8 h-8 rounded-full hover:bg-neutral-100 flex items-center justify-center transition-colors">
+                    <button className="w-7 h-7 rounded-lg hover:bg-neutral-100 flex items-center justify-center transition-colors">
                         <ChevronRight className="w-4 h-4 text-neutral-900" />
                     </button>
                 </div>
@@ -31,15 +29,13 @@ export function CardsWidget() {
                 {CARDS_DATA.map((card) => (
                     <div
                         key={card.id}
-                        className="flex items-center justify-between p-3 rounded-2xl hover:bg-neutral-50 transition-colors cursor-pointer"
+                        className="flex items-center justify-between p-3 rounded-xl hover:bg-neutral-50 transition-colors cursor-pointer"
                     >
                         <div className="flex items-center gap-3">
-                            <div className={`w-10 h-10 ${card.color} rounded-lg flex items-center justify-center text-white font-bold text-sm`}>
-                                {card.name.charAt(0)}
-                            </div>
+                            <div className={`w-2 h-8 ${card.color} rounded-full`} />
                             <div>
                                 <p className="text-sm font-semibold text-neutral-1000">{card.name}</p>
-                                <p className="text-xs text-neutral-500">Vence dia 21</p>
+                                <p className="text-xs text-neutral-500">Vence dia 10</p>
                             </div>
                         </div>
                         <div className="text-right">

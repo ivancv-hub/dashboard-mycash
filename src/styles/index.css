@@ -5,25 +5,33 @@
 @layer base {
   :root {
     /* Mapeando Cores Primitivas do Design System -> CSS Variables */
-    
+
     /* Neutral */
     --color-neutral-0: #FFFFFF;
     --color-neutral-100: #F9FAFB;
     --color-neutral-200: #F3F4F6;
     --color-neutral-900: #1F2937;
-    --color-neutral-1000: #111827; /* Dark Backgrounds */
-    
+    --color-neutral-1000: #111827;
+    /* Dark Backgrounds */
+
     /* Brand (Lime) */
-    --color-brand-500: #DFFE35; /* Primary */
+    --color-brand-500: #DFFE35;
+    /* Primary */
     --color-brand-600: #D7FE03;
-    
+
     /* Semantic Colors */
-    --color-success: #44CB93; /* Green-500 */
-    --color-danger: #EB4B5B;  /* Red-500 */
+    --color-success: #44CB93;
+    /* Green-500 */
+    --color-danger: #EB4B5B;
+    /* Red-500 */
+
+    /* Background */
+    --color-bg-page: #F5F5F5;
+    /* Light gray background */
   }
 
   body {
-    @apply bg-neutral-100 text-neutral-900 font-sans antialiased;
+    @apply bg-[#F5F5F5] text-neutral-900 font-sans antialiased;
   }
 }
 
