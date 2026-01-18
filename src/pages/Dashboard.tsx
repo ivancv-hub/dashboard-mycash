@@ -24,12 +24,20 @@ export default function Dashboard() {
         <div className="p-6 space-y-6">
             <DashboardHeader />
 
-            {/* Category Cards Carousel */}
-            <div className="overflow-x-auto pb-2 -mx-2 px-2">
-                <div className="flex gap-3 min-w-max">
-                    {CATEGORIES.map((category) => (
-                        <CategoryCard key={category.label} {...category} />
-                    ))}
+            {/* Category Cards + Cards Widget Row */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-4">
+                {/* Category Cards Carousel */}
+                <div className="overflow-x-auto pb-2">
+                    <div className="flex gap-3 min-w-max">
+                        {CATEGORIES.map((category) => (
+                            <CategoryCard key={category.label} {...category} />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Cards Widget */}
+                <div className="lg:block">
+                    <CardsWidget />
                 </div>
             </div>
 
@@ -40,10 +48,10 @@ export default function Dashboard() {
                 <SummaryCard type="expenses" label="Despesas" amount={10000} />
             </div>
 
-            {/* Chart and Widgets */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {/* Chart and Upcoming Expenses */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-4">
                 {/* Chart */}
-                <Card className="lg:col-span-2 p-6">
+                <Card className="p-6">
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-2">
                             <BarChart3 className="w-4 h-4 text-neutral-900" />
@@ -65,11 +73,8 @@ export default function Dashboard() {
                     </div>
                 </Card>
 
-                {/* Widgets Column */}
-                <div className="space-y-4">
-                    <CardsWidget />
-                    <UpcomingExpensesWidget />
-                </div>
+                {/* Upcoming Expenses Widget */}
+                <UpcomingExpensesWidget />
             </div>
 
             {/* Transactions Table */}
