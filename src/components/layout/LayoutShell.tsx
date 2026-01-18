@@ -7,7 +7,7 @@ interface LayoutShellProps {
 
 export function LayoutShell({ children }: LayoutShellProps) {
     return (
-        <div className="min-h-screen bg-neutral-100 flex">
+        <div className="min-h-screen bg-[#F5F5F5] flex">
             <Sidebar />
             {/* 
         Main Content Area 
@@ -21,7 +21,7 @@ export function LayoutShell({ children }: LayoutShellProps) {
         For now, let's assume expanded (ml-64) as default for desktop, 
         and we will fix the margin transition in the "Responsiveness" prompt or via context context.
       */}
-            <main className="flex-1 w-full lg:pl-64 transition-all duration-300">
+            <main className="flex-1 w-full lg:pl-[300px] transition-all duration-300">
                 <div className="max-w-[1600px] mx-auto min-h-screen">
                     {children}
                 </div>
