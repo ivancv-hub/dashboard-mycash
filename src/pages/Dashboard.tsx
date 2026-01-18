@@ -24,28 +24,31 @@ export default function Dashboard() {
         <div className="p-6 space-y-6">
             <DashboardHeader />
 
-            {/* Category Cards + Cards Widget Row */}
+            {/* Main Grid: Left Column (Categories + Summary) | Right Column (Cards Widget) */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-4">
-                {/* Category Cards Carousel */}
-                <div className="overflow-x-auto pb-2">
-                    <div className="flex gap-3 min-w-max">
-                        {CATEGORIES.map((category) => (
-                            <CategoryCard key={category.label} {...category} />
-                        ))}
+                {/* Left Column */}
+                <div className="space-y-4">
+                    {/* Category Cards Carousel */}
+                    <div className="overflow-x-auto pb-2">
+                        <div className="flex gap-3 min-w-max">
+                            {CATEGORIES.map((category) => (
+                                <CategoryCard key={category.label} {...category} />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Summary Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <SummaryCard type="balance" label="Saldo total" amount={2000} />
+                        <SummaryCard type="income" label="Receitas" amount={12000} />
+                        <SummaryCard type="expenses" label="Despesas" amount={10000} />
                     </div>
                 </div>
 
-                {/* Cards Widget */}
+                {/* Right Column - Cards Widget */}
                 <div className="lg:block">
                     <CardsWidget />
                 </div>
-            </div>
-
-            {/* Summary Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <SummaryCard type="balance" label="Saldo total" amount={2000} />
-                <SummaryCard type="income" label="Receitas" amount={12000} />
-                <SummaryCard type="expenses" label="Despesas" amount={10000} />
             </div>
 
             {/* Chart and Upcoming Expenses */}
