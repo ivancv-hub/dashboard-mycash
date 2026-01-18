@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# mycash+
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**mycash+** is a modern, responsive financial management dashboard designed for families. It allows users to track income, expenses, credit cards, and financial goals in a unified and intuitive interface.
 
-Currently, two official plugins are available:
+![Project Status](https://img.shields.io/badge/status-development-orange)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- **Dashboard Overview**: Real-time summary of balance, income, and expenses.
+- **Transaction Management**: Detailed tracking of daily financial activities.
+- **Credit Card Widget**: Visual tracking of credit card limits and bills.
+- **Goals & Planning**: Set and monitor financial goals for the family.
+- **Family Management**: Multi-user support for family members to track individual spending.
+- **Responsive Design**: Optimized for Desktop (Sidebar), Tablet, and Mobile (Drawer Navigation).
+- **Dark/Light Mode Ready**: Built with a scalable design system (tokens).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Core**: [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Routing**: [React Router](https://reactrouter.com/)
+- **State Management**: React Context API (No external libraries for state)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The project follows a Domain-Driven Design (DDD) inspired structure within `src/components`:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+src/
+├── assets/              # Static assets (images, svg)
+├── components/
+│   ├── layout/          # Sidebar, Header, MobileDrawer
+│   ├── dashboard/       # Widgets specific to the dashboard view
+│   ├── transactions/    # Tables and filters for transactions
+│   ├── cards/           # Credit card components
+│   ├── goals/           # Goals visualization components
+│   ├── modals/          # Global modal system
+│   └── ui/              # Reusable atom components (Button, Input, Badge)
+├── contexts/            # Global Application State (FinanceContext)
+├── hooks/               # Custom Hooks (useFinance, useMedia)
+├── lib/                 # Utilities (formatters, cn)
+├── pages/               # Main View Components (routed)
+├── styles/              # Global CSS and Tailwind directives
+└── types/               # TypeScript Interfaces (Transaction, Member, etc.)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Design System
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The UI is built upon a strict set of design tokens tailored for financial data visualization:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Primary Color**: Lime (`#DFFE35`) for actions and highlights.
+- **Semantic Colors**: Green for Income, Red for Expenses.
+- **Typography**: Inter/Roboto for clean readability.
+
+## 🏁 How to Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ivancv-hub/dashboard-mycash.git
+   cd dashboard-mycash
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## 📄 Documentation
+
+- [Project Specifications](./docs/specifications.md): Detailed functional requirements.
+- [Design Tokens](./docs/tokens.md): Reference for colors, spacing, and typography.
+- [Prompt Sequence](./docs/Sequência%20de%20prompts.md): Plan of execution for the AI assistant.
+
+---
+
+Developed with ❤️ by Ivan Vanzella
